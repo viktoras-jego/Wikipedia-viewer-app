@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia viewer</title>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Comfortaa|Raleway|PT+Sans|Source+Sans+Pro|Roboto" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+<form class="search-form col-md-10 col-md-offset-box">
+  <h1 class="heading">Search for Wikipedia article</h1>
+  <h1 class="headline"><span class="header1"> Wikipedia</span> <span class="header2"> Viewer</span> </h1>
+  <input type="text" class="search" placeholder="Search" onfocus="toTop(this)">
+
+    <button onclick="openRandom()" class="btn random"><i class="fa fa-random fa-w"></i></button>
+
+
+
+  <ul class="suggestions">
+
+  </ul>
+</form>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+<script>
+     const searchInput = document.querySelector('.search');
+     const text1 = document.querySelector('.header1');
+     const text2 = document.querySelector('.header2');
+     const heading = document.querySelector('.heading');
+     const random = document.querySelector('.random');
+     function toTop(x) {
+          searchInput.style.top = "-30px";
+          text1.style.left = "-400px";
+          text2.style.right = "-400px";
+          text1.style.opacity = "0";
+          text2.style.opacity = "0";
+          random.style.top = "-30px";
+          setTimeout(function(){heading.style.opacity = "1"; },700);
+      }
+
+     function openRandom() {
+          window.open('https://en.wikipedia.org/wiki/Special:Random', '_blank');
+     }
+
+     const url = "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&limit=15&search=";
+
+
+
+
+
+     function createList(dataArray) {
+      dataArray.shift();
+      let itemTitle = dataArray[0];
+      let itemDescription = dataArray[1];
+      let itemUrl = dataArray[2];
+      let length = itemTitle.length;
+      let newDataArray = [];
+
+      for(let i = 0; i<length; i++){
+           newDataArray.push([itemTitle[i],itemDescription[i],itemUrl[i]]);
+      }
+      const html = newDataArray.map(singleItem => {
+            let title = singleItem[0];
+            let description = singleItem[1];
+            let url = singleItem[2];
+
+         return `
+         <a target="_blank" style="text-decoration: none; color: black" href="${url}"
+         <li class="li-class">
+         <span class="title">${title}</span>
+         <span class="description">${description}</span>
+         </li>
+         </a>
+         `
+      }).join((''));
+          suggestions.innerHTML = html;
+     }
+
+
+     function displayItems() {
+          let textToSearch = this.value;
+          $.ajax({
+               url: url + textToSearch,
+               jsonp: "callback",
+               dataType: "jsonp",
+               success: function(response) {
+                     createList(response);
+               }
+          });
+     }
+
+
+
+
+     const suggestions = document.querySelector('.suggestions');
+     searchInput.addEventListener('change',displayItems);
+     searchInput.addEventListener('keyup',displayItems);
+
+
+
+
+</script>
+</body>
+</html>
