@@ -1,10 +1,4 @@
-html {
-    box-sizing: border-box;
-    background: #223440;
-    font-family:'helvetica neue';
-    font-size: 20px;
-    font-weight: 200;
-}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -19,69 +13,6 @@ html {
 input {
     width: 100%;
 }
-.header1{
-    position: relative;
-    z-index: 2;
-    font-size: 35px;
-    left: 0%;
-    transition: 0.4s;
-    opacity: 1;
-
-}
-.header2{
-    position: relative;
-    z-index: 2;
-    font-size: 35px;
-    transition: 0.4s;
-    right: 0%;
-    opacity: 1;
-}
-.heading{
-    color: white;
-    text-align: center;
-    font-family: 'Comfortaa', cursive;
-    font-weight: 700;
-    opacity: 0;
-    transition: 0.5s;
-}
-.random{
-    border-radius: 2px;
-    background: #4195a4;
-    color: white;
-    font-size: 17px;
-    height: 40px;
-    width: 45px;
-    left: 39%;
-    right: 100px;
-    position: relative;
-    top: 210px;
-    transition: 0.8s;
-    z-index: 2;
-
-
-    transition: 0.8s;
-}
-input.search {
-    margin: 0;
-    text-align: left;
-    padding: 10px;
-    padding-left: 1%;
-    padding-right: 1%;
-    outline:0;
-    border: 2px solid #F7F7F7;
-    width: 20%;
-    left: 38%;
-    right: 100px;
-    position: relative;
-    top: 210px;
-    z-index: 2;
-    border-radius: 5px;
-    font-size: 18px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
-    transition: 0.8s;
-}
-
-
 
 .suggestions {
     margin: 0;
@@ -126,6 +57,7 @@ body{
     background:#223440;
     font-size: 20px;
     font-weight: 200;
+    overflow-x: hidden;
 }
 .search-form{
     margin:50px auto;
@@ -142,18 +74,202 @@ body{
     font-size: 17px;
 }
 
+@media (min-width: 268px) {
+    .col-md-offset-box {
+        margin-left: 8.333333%;
+        margin-right: 8.333333%;
+    }
+    .header1{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        left: 0%;
+        transition: 0.4s;
+        opacity: 1;
 
+    }
+    .header2{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        transition: 0.4s;
+        right: 0%;
+        opacity: 1;
+    }
+    .heading{
+        color: white;
+        text-align: center;
+        font-family: 'Comfortaa', cursive;
+        font-weight: 700;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .random{
+        border-radius: 2px;
+        background: #4195a4;
+        color: white;
+        font-size: 17px;
+        height: 40px;
+        width: 45px;
+        left: 23%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        transition: 0.8s;
+        z-index: 2;
+    }
+    input.search {
+        margin: 0;
+        text-align: left;
+        padding: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+        outline:0;
+        border: 2px solid #F7F7F7;
+        width: 45%;
+        left: 22%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        z-index: 2;
+        border-radius: 5px;
+        font-size: 18px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+        transition: 0.8s;
+    }
+
+}
 
 @media (min-width: 768px) {
     .col-md-offset-box {
         margin-left: 8.333333%;
+        margin-right: 8.333333%;
     }
+
+    .header1{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        left: 0%;
+        transition: 0.4s;
+        opacity: 1;
+
+    }
+    .header2{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        transition: 0.4s;
+        right: 0%;
+        opacity: 1;
+    }
+    .heading{
+        color: white;
+        text-align: center;
+        font-family: 'Comfortaa', cursive;
+        font-weight: 700;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .random{
+        border-radius: 2px;
+        background: #4195a4;
+        color: white;
+        font-size: 17px;
+        height: 40px;
+        width: 45px;
+        left: 23%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        transition: 0.8s;
+        z-index: 2;
+    }
+    input.search {
+        margin: 0;
+        text-align: left;
+        padding: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+        outline:0;
+        border: 2px solid #F7F7F7;
+        width: 45%;
+        left: 22%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        z-index: 2;
+        border-radius: 5px;
+        font-size: 18px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+        transition: 0.8s;
+    }
+
 }
 @media (min-width: 992px) {
     .col-md-offset-box {
         margin-left: 8.333333%;
     }
-}
+
+    .header1{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        left: 0%;
+        transition: 0.4s;
+        opacity: 1;
+
+    }
+    .header2{
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        transition: 0.4s;
+        right: 0%;
+        opacity: 1;
+    }
+    .heading{
+        color: white;
+        text-align: center;
+        font-family: 'Comfortaa', cursive;
+        font-weight: 700;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .random{
+        border-radius: 2px;
+        background: #4195a4;
+        color: white;
+        font-size: 17px;
+        height: 40px;
+        width: 45px;
+        left: 35%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        transition: 0.8s;
+        z-index: 2;
+    }
+    input.search {
+        margin: 0;
+        text-align: left;
+        padding: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+        outline:0;
+        border: 2px solid #F7F7F7;
+        width: 25%;
+        left: 34%;
+        right: 100px;
+        position: relative;
+        top: 210px;
+        z-index: 2;
+        border-radius: 5px;
+        font-size: 18px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+        transition: 0.8s;
+    }
+    }
 @media (min-width: 1200px) {
     .col-md-offset-box {
         margin-left: 8.333333%;
